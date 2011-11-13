@@ -6,7 +6,7 @@ var cpLog = {
 	binds:function(){
 		window.onerror = function(msg,url,num){
 			cpLog.onerror(msg,url,num);
-			return true;
+			return !document.location.href.match(/(\?|&)debugJS\w*?=true/);
 		}
 	},
 	onerror:function(msg,url,num){
